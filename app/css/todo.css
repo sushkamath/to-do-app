@@ -1,0 +1,18 @@
+.heading {
+	color: #FFF;
+	padding: 0 10px;
+}
+
+.header-img {
+	width: 200px;
+}
+
+.ngToDo {
+	padding: 10px 25px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-control.finished {
+    text-decoration: line-through;
+}
