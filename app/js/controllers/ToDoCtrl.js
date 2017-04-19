@@ -16,12 +16,14 @@
 		};
 
 		$scope.addNewTask = () => {
-			console.log("Adding new task");
-			$scope.todos.unshift( {isComplete: false, val: altCapsFilter($scope.newTask)} );
-			$scope.newTask = '';
+			console.log("Adding new task - ", $scope.newTask);
+			if($scope.newTask !== undefined) {
+				$scope.todos.unshift( {isComplete: false, val: altCapsFilter($scope.newTask)} );
+				$scope.newTask = '';
+			}
 		};
 
-		$scope.removeCompleted = () => {
+		$scope.clearCompleted = () => {
 			console.log("Clearing completed tasks.");
 			$scope.todos = $scope.todos.filter((todo) => {
 				return !todo.isComplete;

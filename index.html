@@ -18,14 +18,14 @@
 			<img alt="Angular" title="Angular" class="header-img pull-right" src="app/images/Angular.png" />
 		</div>
 
-		<section class="ngToDo" ng-controller="toDoCtrl as ctrl">
+		<section class="ngToDo" ng-controller="toDoCtrl">
 			<div class="outer-container">
 				<div class="row">
 					<div class="add-todo-group input-group input-group-lg">
 				        <span class="input-group-addon">
 				          	<i class="glyphicon glyphicon-list-alt"></i>
 				        </span>
-				        <input ng-model="newTask" placeholder="New Todo" class="form-control" type="text"><!-- model  -->
+				        <input ng-model="newTask" placeholder="New Task" class="form-control" type="text"><!-- model  -->
 				        <span class="input-group-btn">
 				          	<button ng-click="addNewTask();" class="btn btn-success" type="button"><!-- click  -->
 				            	<i class="glyphicon glyphicon-plus"></i>
@@ -36,14 +36,14 @@
 
 				<div class="row">&nbsp;</div>
 		      	
-				<div ng-repeat="todo in ctrl.todos" class="row"><!-- repeat  -->
+				<div ng-repeat="todo in todos" class="row"><!-- repeat  -->
 					<div class="input-group input-group-lg">
 				        <span class="input-group-addon">
-				          	<input type="checkbox" ng-model="todo.isComplete" ng-click="ctrl.checkCompleteState()"> <!-- model -->
+				          	<input type="checkbox" ng-model="todo.isComplete" ng-click="checkCompleteState()"> <!-- model -->
 				        </span>
 				        <input class="form-control" type="text" ng-class="{finished: todo.isComplete}" ng-model="todo.val" /><!-- model / class  -->
 				        <span class="input-group-btn">
-				          	<button complete-color="todo.isComplete" class="btn btn-danger" type="button" ng-click="ctrl.deleteToDo($index)"><!-- click  -->
+				          	<button complete-color="todo.isComplete" class="btn btn-danger" type="button" ng-click="deleteToDo($index)"><!-- click  -->
 				            	<i class="glyphicon glyphicon-remove"></i>
 				          	</button>
 				        </span>
@@ -55,7 +55,7 @@
 
 				<div class="row">
 					<div class="btn-clear-group pull-right">
-				        <button ng-class="{disabled: ctrl.isDisabled}" class="btn btn-primary btn-clear" ng-click="ctrl.removeCompleted()">Clear Completed</button><!-- click -->
+				        <button ng-class="{disabled: ctrl.isDisabled}" class="btn btn-primary btn-clear" ng-click="clearCompleted()">Clear Completed</button><!-- click -->
 			      	</div>
 			    </div>
 		    </div>

@@ -10,12 +10,12 @@ module.exports = function (grunt) {
 			js: {
 				// src: ['Angular/app/js/**/*.js'],
 				src: [
-					'Angular/app/js/app.js',
-					'Angular/app/js/filters/ToDoFilter.js',
-					'Angular/app/js/directives/ToDoDirectives.js',
-					'Angular/app/js/controllers/ToDoCtrl.js'
+					'app/js/app.js',
+					'app/js/filters/ToDoFilter.js',
+					'app/js/directives/ToDoDirectives.js',
+					'app/js/controllers/ToDoCtrl.js'
 					],
-				dest: 'Angular/dist/app.js'
+				dest: 'dist/app.js'
 			}
 		},
 		babel: {
@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 			}*/
 			dist: {
 				files: {
-					'Angular/dist/app.min.js': 'Angular/dist/app.js'
+					'dist/app.min.js': 'dist/app.js'
 				}/*
 	            src: [
 	                'Angular/dist/app.js',
@@ -43,11 +43,11 @@ module.exports = function (grunt) {
 	    },
 		watch: {
 			 scripts: {
-                files: 'Angular/app/js/**/*.js',
+                files: 'app/js/**/*.js',
                 tasks: ['concat','babel']
             },
             html: {
-                files: 'Angular/index.html'
+                files: 'index.html'
             }
         },
 		processhtml: {
@@ -57,7 +57,7 @@ module.exports = function (grunt) {
 				},
 				build: {
 					files: {
-						'Angular/index.html': ['Angular/index.html']
+						'index.html': ['index.html']
 					}
 				}
 			}
